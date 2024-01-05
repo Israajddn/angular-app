@@ -24,10 +24,10 @@ export class HomeComponent {
 
   embroidery: Embroidery = {
     id: 9999,
-    name: 'Embroidery1',
-    price: 10,
+    name: 'Flower Embroidery - Navy Blue',
+    price: "$10",
     photo: `../assets/1.png`,
-    available: true
+    available: "available",
   };
 
 }

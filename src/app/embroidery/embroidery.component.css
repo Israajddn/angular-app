@@ -13,10 +13,10 @@
     object-fit: cover;
     border-radius: 30px 30px 0 0;
   }
-  .listing-location {
+  .listing-price {
     padding: 10px 20px 20px 20px;
   }
-  .listing-location::before {
+  .listing-price::before {
     content: url("/assets/location-pin.svg") / "";
   }
   

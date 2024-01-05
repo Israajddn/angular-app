@@ -7,9 +7,11 @@ import { Embroidery } from '../embroidery';
   standalone: true,
   imports: [],
   template: `
-    <p>
-      embroidery works!
-    </p>
+   <section class="listing">
+    <img class="listing-photo" [src]="embroidery.photo" alt="Exterior photo of {{embroidery.name}}">
+    <h2 class="listing-heading">{{ embroidery.name }}</h2>
+    <p class="listing-price">{{ embroidery.price}}, {{embroidery.available }}</p>
+  </section>
   `,
   styleUrl: './embroidery.component.css'
 })
