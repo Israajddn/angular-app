@@ -15,14 +15,14 @@ import { Embroidery } from '../embroidery';
     </form>
     </section>
   <section class="results">
-    <app-embroidery></app-embroidery>
+    <app-embroidery [embroidery] = "embroidery"></app-embroidery>
   </section>
   `,
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
 
-  housingLocation: Embroidery = {
+  embroidery: Embroidery = {
     id: 9999,
     name: 'Embroidery1',
     price: 10,

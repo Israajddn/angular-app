@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input  } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Embroidery } from '../embroidery';
 
 @Component({
   selector: 'app-embroidery',
@@ -12,5 +14,5 @@ import { Component } from '@angular/core';
   styleUrl: './embroidery.component.css'
 })
 export class EmbroideryComponent {
-
+  @Input() embroidery!: Embroidery;
 }
