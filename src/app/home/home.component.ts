@@ -11,12 +11,12 @@ import { EmbroiderysService } from '../embroiderys.service';
   template: `
      <section>
     <form>
-      <input type="text" placeholder="Filter by price">
-      <button class="primary" type="button">Search</button>
+      <input type="text" placeholder="Filter by color" #filter>
+      <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
     </form>
     </section>
   <section class="results">
-    <app-embroidery *ngFor="let embroidery of embroideryList"
+    <app-embroidery *ngFor="let embroidery of filteredEmbroideryList"
   [embroidery]="embroidery"></app-embroidery>
   </section>
   `,
@@ -25,10 +25,22 @@ import { EmbroiderysService } from '../embroiderys.service';
 export class HomeComponent {
 
   embroideryList: Embroidery[] = [];
+  filteredEmbroideryList: Embroidery[] = [];
   embroiderysService: EmbroiderysService = inject(EmbroiderysService);
 
 constructor() {
   this.embroideryList = this.embroiderysService.getAllEmbroideryPrices();
+  this.filteredEmbroideryList = this.embroideryList;
+}
+filterResults(text: string) {
+  if (!text) {
+    this.filteredEmbroideryList = this.embroideryList;
+    return;
+  }
+
+  this.filteredEmbroideryList = this.embroideryList.filter(
+    embroidery => embroidery?.color.toLowerCase().includes(text.toLowerCase())
+  );
 }
 
 }
