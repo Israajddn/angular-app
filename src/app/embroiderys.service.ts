@@ -11,7 +11,7 @@ export class EmbroiderysService {
     {
     id: 0,
     name: 'Flower Embroidery - Navy Blue',
-    color:'Navy Blue',
+    color:'navy blue',
     price: "$10",
     photo: `../assets/1.png`,
     available: "available",
@@ -20,7 +20,7 @@ export class EmbroiderysService {
   {
     id: 1,
     name: 'Flower Embroidery - Turquoise',
-    color:'Turquoise',
+    color:'turquoise',
     price: "$20",
     photo: `../assets/2.png`,
     available: "available",
@@ -29,7 +29,7 @@ export class EmbroiderysService {
   {
     id: 2,
     name: 'Flower Embroidery - Beige',
-    color:'Beige',
+    color:'beige',
     price: "$15",
     photo: `../assets/3.png`,
     available: "available",
