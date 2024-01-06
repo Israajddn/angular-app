@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmbroideryComponent } from '../embroidery/embroidery.component';
 import { Embroidery } from '../embroidery';
+import { EmbroiderysService } from '../embroiderys.service';
 
 @Component({
   selector: 'app-home',
@@ -23,27 +24,11 @@ import { Embroidery } from '../embroidery';
 })
 export class HomeComponent {
 
-  embroideryList: Embroidery[] = [
-    {
-    id: 0,
-    name: 'Flower Embroidery - Navy Blue',
-    price: "$10",
-    photo: `../assets/1.png`,
-    available: "available",
-  },
-  {
-    id: 1,
-    name: 'Flower Embroidery - Turquoise',
-    price: "$20",
-    photo: `../assets/2.png`,
-    available: "available",
-  },
-  {
-    id: 2,
-    name: 'Flower Embroidery - Beige',
-    price: "$15",
-    photo: `../assets/3.png`,
-    available: "available",
-  }];
+  embroideryList: Embroidery[] = [];
+  embroiderysService: EmbroiderysService = inject(EmbroiderysService);
+
+constructor() {
+  this.embroideryList = this.embroiderysService.getAllEmbroideryPrices();
+}
 
 }
